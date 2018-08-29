@@ -114,10 +114,11 @@ body{
 }
 
 #player-name{
-	font-family: 'Trade Winds', cursive;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
 	position: absolute;
 	left: 100px;
 	top: 10px;
+	color: white;
 }
 
 #opponent-name{
@@ -125,6 +126,7 @@ body{
 	position: absolute;
 	right: 100px;
 	top: 10px;
+	color: white;
 }
 
 #player-hp {
@@ -132,6 +134,7 @@ body{
 	position: absolute;
 	left: 100px;
 	top: 40px;
+	color: white;
 }
 #opponent-hp {
 	font-family: 'Trade Winds', cursive;
@@ -145,6 +148,7 @@ body{
 	position: absolute;
 	left: 100px;
 	top: 70px;
+	color: white;
 
 }
 
@@ -153,6 +157,7 @@ body{
 	position: absolute;
 	right: 100px;
 	top: 70px;
+	color: white;
 }
 
 #select-text {
