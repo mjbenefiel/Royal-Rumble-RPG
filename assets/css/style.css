@@ -52,12 +52,16 @@ body{
 
 }
 
-.character-selection-section{
+
+
+#wrestler{
 	width: 810px;
 	height: 160px ;
-	max-width: 900px;
-	border-bottom: solid red 5px;
-/*	display: inline;*/
+	max-width: 100%;
+	margin: auto 0;
+    border-bottom: solid red 5px;
+
+	/*	display: inline;*/
 /*	left: 50%;
     margin-right: -50%;
     transform: translate(-50%) */
@@ -141,6 +145,7 @@ body{
 	position: absolute;
 	right: 100px;
 	top: 40px;
+	color: white;
 }
 
 #player-total-hp {
