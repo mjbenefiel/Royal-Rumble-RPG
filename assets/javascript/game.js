@@ -44,7 +44,7 @@ $(document).ready(function () {
 		// reset enemy selected
 		var defender = null;
 	//Wrestler Object
-	var wrestlerArr = [andreTheGiant, hulkHogan, machoMan, ultimateWarrior];
+	var characterSelection = [andreTheGiant, hulkHogan, machoMan, ultimateWarrior];
 	
 	$("#character").empty();
 	$("#defenderArea").empty();
@@ -52,47 +52,25 @@ $(document).ready(function () {
 	$("#status").empty();
 
 	//display wrestlers in section
-	$.each(wrestlerArr, function(index, wrestlers) {
+/*	$.each(wrestlerArr, function(index, wrestlers) {
 		// create a div for each character to display character selection at start of the game
 		
 		var newCharacterDiv = $("<span>").addClass("character panel panel-success").attr("id",wrestlers.id);
 		$("<span>").addClass("panel-body").append("<img src='" + wrestlers.img + "'>").appendTo(newCharacterDiv);
-		$("#characterSelection").append(newCharacterDiv);
+		$("#wrestlers").append(newCharacterDiv);
 		
+	}); */
+
+	$.each(characterSelection, function(index, wrestlers) {
+		// create a div for each character to display character selection at start of the game
+		
+		
+		$("#wrestler").append("<img src='" + wrestlers.img + "'>");
+	
 	});
 
 
-	$(".character-selection-section").on("click", function() {
-		// when character has been selected
-		if(wrestlers === null) {
-			console.log("picked character");
-			//get id of character selected
-			var charId = parseInt($(this).attr("id"));
 
-			character = characterSelection[charId];
-
-			// loop through character array
-			$.each(characterSelection, function(index, character) {
-				// add unselected characters to enemies array
-				if(character.id !== charId) {
-					defenders.push(character);
-					$("#"+character.id).removeClass("character panel-success").addClass("defender panel-danger").appendTo("#defenderArea");
-				} else {
-					$("#"+character.id).appendTo("#character");
-				}
-			});
-
-			// add click event after defender class has been added
-			$(".defender").on("click", function() {
-				if(defender === null) {
-					var defenderId = parseInt($(this).attr("id"));
-					console.log(this);
-					defender = characterSelection[defenderId];
-					$("#"+defenderId).appendTo("#defender");
-				}
-			});
-		}
-	});
 
 
 
