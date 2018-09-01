@@ -1,53 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Royal Rumble RPG</title>
+	<meta charset="UTF-8">
+	<title>Royal Rumble</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+	
 </head>
 <body>
-	<div class="main-container">
 
-		<header class="header">
-			<img id="logo" src="assets/images/Royal-Rumble.jpg" alt="background">
-			<div id="rpg">Let's get readdyyy to rummmbbbblllleeeeee!</div>
-		</header>
-		
-		<div id="game-end-container"></div>
-		<div id="game-end-text-container"></div>
-		
-		<div id="characterSelection"></div>
-		<div id="wrestler"></div>
-		<div id="select-text">Select Your Character</div>
-		
+<!-- NEW LAYOUT -->
+<div class="main-container">
+
+	<header class="header">
+		<img id="logo" src="assets/images/Royal-Rumble.jpg" alt="background">
+		<div id="rpg"></div>
+	</header>
+	
+	<!-- <div id="game-end-container"></div> -->
+	<!-- <div id="game-end-text-container"></div> -->
+	
+	<div class="header">
+	<div id="select-text">Choose Your Wrestler</div>
+	<div id="characterSelection"></div>
+	<div id="wrestler"></div>
+	
+	
+</div>
 
 	
-		
-		<button id="attack-button">Attack</button>
 
+
+</div>
+<div id="defenderArea">	</div>
+<div class="arena">
+		
+	<img id='throne-room' src ='assets/images/ring.jpg'>
+		<div id="player-name"></div>
+		<div id="player-hp"></div> 
+		<div id="player-total-hp"></div>
+		<div id="opponent-name"></div>
+		<div id="opponent-hp"></div> 
+		<div id="opponent-total-hp"></div>
+		<div id="player-fight-area"></div>
+		<div id="attack-area">
+			<button id="attack" class="btn btn-danger">Attack!</button>
+
+		</div>
+		<div id="restart-area">
+			<button id="restart" class="btn btn-success">Restart</button>
+		</div>
+		<div class="status-area">
+				<div id="status">
+					</div>
+				</div>	
+		
+	
+		<div id="opponent-fight-area"></div>
 	</div>
 
-	<div class="arena">
-		<img id='throne-room' src ='assets/images/ring.jpg'>
-			<div id="player-name"></div>
-			<div id="player-hp"></div> 
-			<div id="player-total-hp"></div>
-			<div id="opponent-name"></div>
-			<div id="opponent-hp"></div> 
-			<div id="opponent-total-hp"></div>
-			<div id="player-fight-area"></div>
-			<div id="opponent-fight-area"></div>
-		</div>
 
-	
+
+	<!-- <button id="restart" class="btn btn-success">Restart</button> -->
+
+	<div id="defender">
+	</div>
+	<div id="character">
+				
+	</div>
+
+
+<!-- FIGHT SECTION -->
+<!-- <div id="fightSection"> -->
+		<!-- <button id="attack" class="btn btn-danger">Attack!</button> -->
+	<!-- </div> -->
+
+
+		
+
+
+
+
+
+
+
 	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>	 
-  <script src="assets/javascript/game.js"></script>
+	src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+	crossorigin="anonymous"></script>
 	
+
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  
+
 </body>
 </html>
