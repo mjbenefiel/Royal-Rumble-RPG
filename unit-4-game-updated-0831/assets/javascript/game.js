@@ -21,7 +21,7 @@ $(document).ready(function () {
 			healthPoints: 100,
 			baseAttack: 8,
 			attackPower: 8,
-			counterAttackPower: 5,
+			counterAttackPower: 25,
 			img:"assets/images/hulk-hogan1png.png"
 		}
 
@@ -31,7 +31,7 @@ $(document).ready(function () {
 			healthPoints: 150,
 			baseAttack:9,
 			attackPower: 9,
-			counterAttackPower: 10,
+			counterAttackPower: 20,
 			img:"assets/images/macho-man1.png"
 		}
 
@@ -44,6 +44,10 @@ $(document).ready(function () {
 			counterAttackPower: 12,
 			img:"assets/images/ultimate-warrior1.png"
 		}
+
+	var JimRoss = {
+		img:"assets/images/Jim_Ross.png"
+	}
 		// reset character selected
 		wrestler = null;
 
@@ -55,12 +59,22 @@ $(document).ready(function () {
 
 		// reset character selections
 		var wrestlerSelection = [andreTheGiant, hulkHogan, machoMan, ultimateWarrior];
+		var announcerSelection = [jimRoss];
+
+	var bellSound = new Audio('./assets/audio/bell.mp3');
+	
+	
+	
+
 
 		// clears all character divs
 		$("#character").empty();
 		$("#defenderArea").empty();
 		$("#defender").empty();
 		$("#status").empty();
+		$("#attack").hide();
+
+	
 
 		$.each(wrestlerSelection, function(index, wrestler) {
 			// create a div for each character to display character selection at start of the game
@@ -73,10 +87,14 @@ $(document).ready(function () {
 			// append new div to character selection
 			$("#characterSelection").append(newCharacterDiv);
 		});
-
+		
 		$(".character").on("click", function() {
+			
 			// when character has been selected
 			if(wrestler === null) {
+			$("#throne-room").css({"margin-top": "auto"})
+			$("#select-text").empty().html("Let's get ready to rumble!");
+		
 				console.log("picked character");
 				//get id of character selected
 				var wrestlerId = parseInt($(this).attr("id"));
@@ -88,7 +106,7 @@ $(document).ready(function () {
 					// add unselected characters to enemies array
 					if(wrestler.id !== wrestlerId) {
 						defenders.push(wrestler);
-						$("#"+wrestler.id).removeClass("character panel-success").addClass("defender panel-danger").appendTo("#defenderArea");
+						$("#"+wrestler.id).removeClass("character panel-success").addClass("defender panel-warning").appendTo("#defenderArea");
 					} else {
 						$("#"+wrestler.id).appendTo("#player-fight-area");
 						
@@ -97,12 +115,14 @@ $(document).ready(function () {
 				});
 
 				// add click event after defender class has been added
+				$('.defender').click(e => bellSound.play());
 				$(".defender").on("click", function() {
-					if(defender === null) {
+					$("#attack").show();
+				    if(defender === null) {
 						var defenderId = parseInt($(this).attr("id"));
 						console.log(this);
 						defender = wrestlerSelection[defenderId];
-						$("#"+defenderId).appendTo("#opponent-fight-area") 
+						$("#"+defenderId).removeClass("character panel-warning").addClass("defender panel-danger").appendTo("#opponent-fight-area") 
 						
 						
 
@@ -116,8 +136,8 @@ $(document).ready(function () {
 
 	startGame();
 
-	
-
+	var slapSound = new Audio('./assets/audio/slap.mp3');
+	$('#attack').click(e => slapSound.play());
 	$("#attack").on("click", function() {
 		// when character has been selected, character has not been defeated and there are still defenders left
 		if(wrestler !== null && wrestler.healthPoints > 0 && defenders.length > 0) {
@@ -128,7 +148,7 @@ $(document).ready(function () {
 			if(defender !== null) {
 				// decrease defender HP by character attack power
 				defender.healthPoints -= wrestler.attackPower;
-				status += "You attacked " + defender.name + " for " + wrestler.attackPower + " damage.<br>";
+				status += " Good God almighty! You attacked " + defender.name + " for " + wrestler.attackPower + " HP.<br>";
 
 				console.log("Defender: ",defender.name,defender.healthPoints);
 
@@ -136,8 +156,8 @@ $(document).ready(function () {
 				$("#"+defender.id + " .hp").html(defender.healthPoints);
 
 				// decrease character HP by defender counter attack power
-				character.healthPoints -= defender.counterAttackPower;
-				status += defender.name + " attacked you back for " + defender.counterAttackPower + " damage.<br>";
+				wrestler.healthPoints -= defender.counterAttackPower;
+				status += defender.name + " attacked you back for " + defender.counterAttackPower + " HP. Look at the carnage!<br>";
 
 				console.log("Character: ",wrestler.name,wrestler.healthPoints);
 
@@ -149,13 +169,13 @@ $(document).ready(function () {
 
 				// when character is defeated
 				if(wrestler.healthPoints <= 0) {
-					status = "You've been defeated... GAME OVER!!!!";
+					status = "As God as my witness," + defender.name + " just broke you in half. Game over!";
 					$("#restart").show();
 				} else if(defender.healthPoints <= 0) {	// when defender is defeated
-					status = "You have defeated " + defender.name + ", you can choose to fight another enemy.";
+					status = "You just whipped " + defender.name + " like a government mule, you can choose to fight another jabroni.";
 
 					// clear defender selection
-					$("#defender").empty();
+					$("#opponent-fight-area").empty();
 					defender = null;
 
 					// remove defeated defender from defender array
@@ -174,9 +194,16 @@ $(document).ready(function () {
 			$("#status").html(status);
 		}
 	})
-
+	var jimRoss = new Audio('./assets/audio/jimross.mp3');
+	$('#restart').click(e => jimRoss.play());
 	$("#restart").on("click", function() {
+		$("#player-fight-area").empty();
+		$("#opponent-fight-area").empty();
+		$("#throne-room").css({"margin-top": "250px"})
+		$("#select-text").empty().html("Choose Your Wrestler");
 		startGame();
 	})
 	
 });
+
+
