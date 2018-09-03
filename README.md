@@ -14,13 +14,15 @@ THE PROJECT
 
 Bootstrap 3.3.7
 
+jQuery 3.2.1
+
 index.html to structure RPG webpage/app
 
 style.css used to style RPG webpage/app
 
 animate.css for extra effects
 
-game.js for jQuery and JavaScript
+game.js for JavaScript
 
 
 JavaScript & jQuery 
