@@ -10,10 +10,10 @@ $(document).ready(function () {
 		var andreTheGiant = {
 			id: 0,
 			name: "Andre the Giant",
-			healthPoints: 115,
-			baseAttack: 15,
-			attackPower: 15,
-			counterAttackPower: 16,
+			healthPoints: 180,
+			baseAttack: 1,
+			attackPower: 2,
+			counterAttackPower: 20,
 			img: "assets/images/andre-the-giant1.png"
 		}
 
@@ -21,34 +21,34 @@ $(document).ready(function () {
 			id: 1,
 			name: "Hulk Hogan",
 			healthPoints: 100,
-			baseAttack: 15,
-			attackPower: 15,
-			counterAttackPower: 16,
+			baseAttack: 12,
+			attackPower: 9,
+			counterAttackPower: 5,
 			img: "assets/images/hulk-hogan1png.png"
 		}
 
 		var machoMan = {
 			id: 2,
 			name: "Macho Man",
-			healthPoints: 100,
-			baseAttack: 15,
-			attackPower: 15,
-			counterAttackPower: 16,
+			healthPoints: 150,
+			baseAttack: 2,
+			attackPower: 2,
+			counterAttackPower: 20,
 			img: "assets/images/macho-man1.png"
 		}
 
 		var ultimateWarrior = {
 			id: 3,
 			name: "Ultimate Warrior",
-			healthPoints: 100,
+			healthPoints: 120,
 			baseAttack: 15,
 			attackPower: 15,
-			counterAttackPower: 16,
+			counterAttackPower: 1,
 			img: "assets/images/ultimate-warrior1.png"
 		}
 
 
-		// reset character selected
+		// reset wrestler selected
 		wrestler = null;
 
 		// reset enemies array
@@ -57,7 +57,7 @@ $(document).ready(function () {
 		// reset enemy selected
 		defender = null;
 
-		// reset character selections
+		// reset wrestler selections
 		var wrestlerSelection = [andreTheGiant, hulkHogan, machoMan, ultimateWarrior];
 
 
@@ -151,7 +151,8 @@ $(document).ready(function () {
 						console.log(this);
 						defender = wrestlerSelection[defenderId];
 						//panel changes to red
-						$("#" + defenderId).removeClass("character panel-warning").addClass("defender panel-danger").appendTo("#opponent-fight-area")
+						$("#" + defenderId).removeClass("character panel-warning").addClass("defender panel-danger").appendTo("#opponent-fight-area");
+						// 
 
 
 					}

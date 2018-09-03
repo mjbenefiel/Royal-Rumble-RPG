@@ -59,11 +59,7 @@ html {
 	  
    }
    
-   
-   
-   
-   
-	 
+   	 
 	 .main-container{
 		 width: 100%;
 		 max-width: 800px;
@@ -160,10 +156,7 @@ html {
 	   height: 50px;
 	   margin: 0px;
    }
-   
-   
-   
-   
+     
    
    #restart-area{
 	   position: absolute;
@@ -210,8 +203,7 @@ html {
 		 height: 150px;
 		 margin: 0px;
 	 }
-   
-	 
+   	 
 	 
 	 #select-text {
 		 width: 800px;
@@ -236,8 +228,8 @@ html {
 	 #defenderArea {
 		 position: absolute;
 		   vertical-align: middle;
-		   max-height: 25px;
-		   max-width: 160px;
+		   max-height: 150px;
+		   max-width: 150px;
 		   
    
 					
