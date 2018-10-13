@@ -77,7 +77,18 @@ html {
 		 justify-content: center;
 	 }
 	 
-
+	 #logo {
+		 float: left;
+		 position: relative;
+		 width: 320px;
+		 height: auto;
+		 position: absolute;
+		 left: 50%;
+		 margin-right: -50%;
+		 transform: translate(-50%) 
+	 
+	 }
+	 
 	 
 	 
 	 #wrestler{
@@ -118,6 +129,7 @@ html {
 		 z-index:1;
 		 
 	 }
+
 	 
 	 #player-fight-area{
 		 position: absolute;
@@ -215,13 +227,15 @@ html {
 	 }
    
 	 #defenderArea {
-		 position: absolute;
-		   vertical-align: middle;
+		 display: inline;
+		/* border: 3px solid #73AD21; */
+			margin-left: 25%;
+			
 		   max-height: 150px;
 		   max-width: 150px;
+		 
 		   
    
 					
 	 }
    
-	 
