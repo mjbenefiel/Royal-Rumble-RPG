@@ -1,31 +1,34 @@
-# unit-4-game
-
-Project: RPG Game | Royal Rumble
+<h1> Royal Rumble RPG Game </h1>
+<hr></hr>
 
 Author: Michael Benefiel
 
-Why I created this project: 
-
-Homework for the University of Kansas Coding Boot Camp, and to develop basic JS skills.
-
 Feel free to use some or all of this code if you're trying to complete a similar project. 
+<hr></hr>
+<h3> App screenshot </h3>
 
-THE PROJECT
+![alt text](https://raw.githubusercontent.com/mjbenefiel/unit-4-game/master/assets/images/readme.jpg "Royal Rumble")
 
-Bootstrap 3.3.7
+<h2> Project overview</h2>
+Let's get ready to rumble! This RPG game is set to an early '90s WWF theme and utilizes jQuery to offer a fun, unique stroll down memory lane for anyone who grew up in the '80s and '90s.
+<hr></hr>
 
-jQuery 3.2.1
+<h2> How it works </h2>
+Select your wrestler. Choose an opponent. Hit the attack button until you're defeated, or you defeat all your enemies. Last man standing wins!
+<hr></hr>
 
-index.html to structure RPG webpage/app
+<h2>Technology used</h2>
 
-style.css used to style RPG webpage/app
+[Animate.css](https://daneden.github.io/animate.css/)
 
-animate.css for extra effects
+[Bootstrap 3.3.7](http://getbootstrap.com/)
 
-game.js for JavaScript
+[jQuery 3.2.1](https://jquery.com/)
 
 
-JavaScript & jQuery 
+<hr></hr>
+
+<h4>Below is a thorough, but not comprehensive, step-by-step process of how I got the app running in terms of code</h4>
 
 function startGame:
 
