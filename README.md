@@ -9,7 +9,10 @@ Feel free to use some or all of this code if you're trying to complete a similar
 
 ![alt text](https://raw.githubusercontent.com/mjbenefiel/unit-4-game/master/assets/images/readme.jpg "Royal Rumble")
 
+<h2> Project overview</h2>
+Let's get ready to rumble! This RPG game is set to an early '90s WWF theme and utilizes jQuery to offer a fun, unique stroll down memory lane for anyone who grew up in the '80s and '90s.
 <hr></hr>
+
 <h2> How it works </h2>
 Select your wrestler. Choose an opponent. Hit the attack button until you're defeated, or you defeat all your enemies. Last man standing wins!
 <hr></hr>
