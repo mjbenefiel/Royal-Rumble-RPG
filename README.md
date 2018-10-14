@@ -1,4 +1,5 @@
 <h1> Royal Rumble RPG Game </h1>
+View the live version: https://mjbenefiel.github.io/Royal-Rumble-RPG/
 <hr></hr>
 
 Author: Michael Benefiel
